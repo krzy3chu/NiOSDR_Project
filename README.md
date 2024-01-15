@@ -1,4 +1,4 @@
-# Turtle controller ros package
+# Turtlebot controller ros package
 
  This package allows you to control the turtlebot by detecting the aruco tag in the camera image.
 
@@ -17,7 +17,7 @@ RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc &&\
     echo "cd ~/niosdr_project_ws" >> ~/.bashrc &&\
     echo "export TURTLEBOT3_MODEL=waffle" >> ~/.bashrc
     
-RUN git clone https://github.com/krzy3chu/turtle_controller.git ~/niosdr_project_ws/src/turtle_controller
+RUN git clone https://github.com/krzy3chu/NiOSDR_Project.git ~/niosdr_project_ws/src/turtle_controller
 
 RUN cd ~/niosdr_project_ws/ &&\
     colcon build --symlink-install
