@@ -26,6 +26,7 @@ class ControllerNode(Node):
         turtle_linear = 0.0 # turtlebot linear velocity
         turtle_angular = 0.0 # turtlebot angular velocity
 
+        # detect aruco markers
         markerCorners, markerIds, rejectedCandidates = cv2.aruco.detectMarkers(cv_image, self._dictionary)
         if markerCorners:
             # draw lines around aruco marker
@@ -43,6 +44,8 @@ class ControllerNode(Node):
         # draw center lines
         cv2.line(cv_image, (0, image_height//2), (image_width, image_height//2), (0,0,0), 3)
         cv2.line(cv_image, (image_width//2, 0), (image_width//2, image_height), (0,0,0), 3)
+        # mirror image
+        cv_image = cv2.flip(cv_image, 2)
         # show processed camera image
         cv2.imshow("camera", cv_image)
         cv2.waitKey(1)
